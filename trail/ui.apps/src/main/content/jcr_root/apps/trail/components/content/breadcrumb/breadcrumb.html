@@ -1,0 +1,22 @@
+<!--/*
+ DESCRIPTION
+ -----------------------------------------------------------------------------
+  Displays breadcrumb navigation (title/link to the page) on the current page.
+ -----------------------------------------------------------------------------
+
+ CHANGE HISTORY
+ -----------------------------------------------------------------------------
+--%>
+*/-->
+<p> Navigation :</p>
+
+<ol class="breadcrumb"
+    data-sly-use.breadcrumb="com.trail.test.core.models.BreadcrumbModel"
+    data-sly-list.navItem="${breadcrumb.items}">
+    <li class="breadcrumb-item ${navItem.active ? 'active' : ''}">
+        <a href="${navItem.page.path @ extension='html'}" data-sly-unwrap="${navItem.active}">
+            ${navItem.page.navigationTitle || navItem.page.title || navItem.page.name}
+        </a>
+    </li>
+</ol>
+<sly data-sly-call="${template.placeholder @ isEmpty=breadcrumb.items.size == 0}"></sly>

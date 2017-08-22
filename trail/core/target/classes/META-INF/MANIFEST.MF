@@ -1,0 +1,40 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1503431239830
+Build-Jdk: 1.8.0_111
+Built-By: yogesh.kulkarni
+Bundle-Description: Core bundle for trail
+Bundle-ManifestVersion: 2
+Bundle-Name: trail - Core
+Bundle-SymbolicName: AEMTrail.trail.core
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: com.trail.test.core.filters;version="1.0.0";uses:="javax
+ .servlet",com.trail.test.core.listeners;version="1.0.0";uses:="org.osgi
+ .service.event",com.trail.test.core.models;version="1.0.0";uses:="com.d
+ ay.cq.wcm.api,org.apache.sling.api,org.apache.sling.models.annotations"
+ ,com.trail.test.core;version="1.0",com.trail.test.core.schedulers;versi
+ on="1.0.0",com.trail.test.core.servlets;version="1.0.0";uses:="javax.se
+ rvlet,org.apache.sling.api,org.apache.sling.api.servlets"
+Import-Package: com.day.cq.wcm.api;version="[1.2,2)",javax.annotation,ja
+ vax.servlet,org.apache.sling.api;version="[2.3,3)",org.apache.sling.api
+ .request;version="[2.4,3)",org.apache.sling.api.resource;version="[2.5,
+ 3)",org.apache.sling.api.servlets;version="[2.1,3)",org.apache.sling.co
+ mmons.osgi;version="[2.2,3)",org.apache.sling.models.annotations;versio
+ n="[1.1,2)",org.apache.sling.models.annotations.injectorspecific;versio
+ n="[1.0,2)",org.osgi.service.event;version="[1.2,2)",org.slf4j;version=
+ "[1.5,2)"
+Provide-Capability: osgi.service;effective:=active;objectClass="javax.se
+ rvlet.Servlet";service.vendor=Adobe,osgi.service;effective:=active;obje
+ ctClass="java.lang.Runnable";scheduler.expression="*/30 * * * * ?";sche
+ duler.concurrent=false;service.vendor=Adobe,osgi.service;effective:=act
+ ive;objectClass="javax.servlet.Filter";service.ranking=-700;sling.filte
+ r.scope=REQUEST;service.vendor=Adobe,osgi.service;effective:=active;obj
+ ectClass="org.osgi.service.event.EventHandler";event.topics="org/apache
+ /sling/api/resource/Resource/*";service.vendor=Adobe
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.6))"
+Service-Component: OSGI-INF/com.trail.test.core.servlets.SimpleServlet.x
+ ml,OSGI-INF/com.trail.test.core.listeners.SimpleResourceListener.xml,OS
+ GI-INF/com.trail.test.core.schedulers.SimpleScheduledTask.xml,OSGI-INF/
+ com.trail.test.core.filters.LoggingFilter.xml
+Sling-Model-Packages: com.trail.test.core
+Tool: Bnd-2.3.0.201405100607
